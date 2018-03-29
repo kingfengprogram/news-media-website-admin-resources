@@ -6,7 +6,9 @@
 export default {
     name: 'GlobalStoreLoading',
     data: function () {
-        shareState: this.$root.store.state
+        return {
+            shareState: this.$root.store.state
+        };
     },
     created: function () {
         this.loadParamMapData();
@@ -31,7 +33,7 @@ export default {
                         this.$root.store.setAliyunOssSignAction(res.data.aliyunOssSignResp);
                         setTimeout(() => {
                             this.loadAliyunOssSignData();
-                        }, (shareState.aliyunOssSign.expire * 1000 - new Date().getTime()) / 2); // 根据配置过期时间,定时重新刷新签名
+                        }, (this.shareState.aliyunOssSign.expire * 1000 - new Date().getTime()) / 2); // 根据配置过期时间,定时重新刷新签名
                     }
                 });
         }
