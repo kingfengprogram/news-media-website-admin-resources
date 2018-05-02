@@ -199,10 +199,10 @@
                         <el-form-item>
                             <i>{{index}}</i>
                         </el-form-item>
-                        <el-form-item label="参数名" :prop="'choicenessCourses.' + index + '.tag'" :rules="updateDialog.formDataRules.choicenessCourse.tag">
+                        <el-form-item label="标签" :prop="'choicenessCourses.' + index + '.tag'" :rules="updateDialog.formDataRules.choicenessCourse.tag">
                             <el-input v-model="updateDialog.formData.choicenessCourses[index].tag" placeholder="请输入标签"></el-input>
                         </el-form-item>
-                        <el-form-item label="参数值" :prop="'choicenessCourses.' + index + '.title'" :rules="updateDialog.formDataRules.choicenessCourse.title">
+                        <el-form-item label="标题" :prop="'choicenessCourses.' + index + '.title'" :rules="updateDialog.formDataRules.choicenessCourse.title">
                             <el-input v-model="updateDialog.formData.choicenessCourses[index].title" placeholder="请输入标题"></el-input>
                         </el-form-item>
                         <el-form-item>

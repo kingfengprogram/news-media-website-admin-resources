@@ -269,7 +269,8 @@ export default {
                         { validator: validateRepassword, trigger: 'change' }
                     ],
                     email: [
-                        { type: 'email', required: false, message: '邮箱格式错误', trigger: 'change' }
+                        { type: 'email', required: false, message: '邮箱格式错误', trigger: 'change' },
+                        { min: 0, max: 128, message: '长度不能超过 128 位', trigger: 'change' }
                     ],
                     phone: [
                         { required: false, pattern: /^1[3|4|5|8][0-9]\d{8}$/, message: '手机号是11位数字', trigger: 'change' }
@@ -331,7 +332,8 @@ export default {
                         { validator: validateUpdateRepassword, trigger: 'change' }
                     ],
                     email: [
-                        { type: 'email', required: false, message: '邮箱格式错误', trigger: 'change' }
+                        { type: 'email', required: false, message: '邮箱格式错误', trigger: 'change' },
+                        { min: 0, max: 128, message: '长度不能超过 128 位', trigger: 'change' }
                     ],
                     phone: [
                         { required: false, pattern: /^1[3|4|5|8][0-9]\d{8}$/, message: '手机号是11位数字', trigger: 'change' }
@@ -543,10 +545,10 @@ export default {
         },
         closeAddDialog: function () {
             this.addDialog.dialogVisible = false;
-            this.resetAddForm(this.addDialog.formName);
+            this.resetAddForm();
         },
         closeUpdateDialog: function () {
-            this.resetUpdateForm(this.updateDialog.formName);
+            this.resetUpdateForm();
             this.updateDialog.dialogVisible = false;
         },
         resetAddForm: function () {

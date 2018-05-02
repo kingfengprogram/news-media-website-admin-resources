@@ -10,7 +10,8 @@ const pagination = {
 };
 
 // 管理后台地址
-const adminUrl = 'http://172.16.1.113:9190/website-admin';
+// const adminUrl = 'http://172.16.1.113:9290';
+const adminUrl = 'http://172.16.4.83:9090/website-admin';
 
 // 存储地址,本地和oss不同
 const stroge = {
@@ -20,7 +21,8 @@ const stroge = {
     localUrl: adminUrl
 };
 
-const uploadFunction = 'oss';
+// const uploadFunction = 'oss';
+const uploadFunction = 'local';
 var imageUoloadURL = stroge.localUrl + '/fileUpload/image';
 var videoUploadURL = stroge.localUrl + '/fileUpload/video';
 if (uploadFunction === 'oss') {

@@ -98,7 +98,7 @@
                     <el-rate v-model="addDialog.formData.difficulty" :max="getVideoDifficultyCount" :low-threshold="1" :high-threshold="getVideoDifficultyCount" :colors="['#67C23A', '#E6A23C', '#F56C6C']"></el-rate>
                 </el-form-item>
                 <el-form-item label="训练人数" prop="totalNumber">
-                    <el-input-number v-model="addDialog.formData.totalNumber" controls-position="right" :step="5000" :min="0" :max="Number.MAX_VALUE"></el-input-number>
+                    <el-input-number v-model.number="addDialog.formData.totalNumber" controls-position="right" :step="5000" :min="0" :max="20000000"></el-input-number>
                 </el-form-item>
                 <el-form-item label="背景图" prop="bgImage">
                     <el-input :disabled="true" v-model="addDialog.formData.bgImage" placeholder="上传背景图片后自动获取"></el-input>
@@ -155,7 +155,7 @@
                     <el-rate v-model="updateDialog.formData.difficulty" :max="getVideoDifficultyCount" :low-threshold="1" :high-threshold="getVideoDifficultyCount" :colors="['#67C23A', '#E6A23C', '#F56C6C']"></el-rate>
                 </el-form-item>
                 <el-form-item label="训练人数" prop="totalNumber">
-                    <el-input-number v-model="updateDialog.formData.totalNumber" controls-position="right" :step="1000" :min="0" :max="Number.MAX_VALUE"></el-input-number>
+                    <el-input-number v-model.number="updateDialog.formData.totalNumber" controls-position="right" :step="1000" :min="0" :max="20000000"></el-input-number>
                 </el-form-item>
                 <el-form-item label="背景图" prop="bgImage">
                     <el-input :disabled="true" v-model="updateDialog.formData.bgImage" placeholder="上传背景图片后自动获取"></el-input>
@@ -376,7 +376,7 @@ export default {
                     ],
                     totalNumber: [
                         { required: true, message: '请输入训练人数', trigger: 'change' },
-                        { type: 'integer', min: 0, max: Number.MAX_VALUE, message: '长度为 2 到 32 个字符', trigger: 'change' }
+                        { type: 'integer', min: 0, max: 20000000, message: '训练人数的范围为 0 到 2000万', trigger: 'change' }
                     ],
                     bgImage: [
                         { required: true, message: '请上传背景图', trigger: 'change' },
@@ -438,7 +438,7 @@ export default {
                     ],
                     totalNumber: [
                         { required: true, message: '请输入训练人数', trigger: 'change' },
-                        { type: 'integer', min: 0, max: Number.MAX_VALUE, message: '长度为 2 到 32 个字符', trigger: 'change' }
+                        { type: 'integer', min: 0, max: 20000000, message: '训练人数的范围为 0 到 2000万 ', trigger: 'change' }
                     ],
                     bgImage: [
                         { required: true, message: '请上传背景图', trigger: 'change' },

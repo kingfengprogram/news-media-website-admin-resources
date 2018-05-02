@@ -24,7 +24,7 @@ export default {
     data: function () {
         return {
             submiting: false,
-            submitText: '登陆',
+            submitText: '登录',
             user: {
                 username: '',
                 password: ''
@@ -44,12 +44,12 @@ export default {
             this.$refs.login.validate((valid) => {
                 if (valid) {
                     this.submiting = true;
-                    this.submitText = '登陆中';
+                    this.submitText = '登录中';
                     this.$http.post('/login', this.user)
                         .then((res) => {
                             setTimeout(() => {
                                 this.submiting = false;
-                                this.submitText = '登陆';
+                                this.submitText = '登录';
                                 if (res.data.result === 'success') {
                                     this.$root.bus.$emit('refresh_userinfo', res.data.user);
                                     this.$router.push('/home');

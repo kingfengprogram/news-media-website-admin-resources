@@ -772,8 +772,7 @@ export default {
             var sortQueryParams = {
                 active: true,
                 position: 'asc',
-                currentPage:
-                this.carousel.pagination.currentPage,
+                currentPage: this.carousel.pagination.currentPage,
                 pageSize: this.carousel.pagination.pageSize
             };
             this.$http.get('/portal/tutor/list', sortQueryParams)

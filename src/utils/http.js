@@ -9,8 +9,7 @@ var instance = axios.create({
     withCredentials: true, // 跨域会话保持
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        'Origin': 'http://localhost:8080'
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     }
 });
 
